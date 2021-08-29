@@ -1,0 +1,172 @@
+/* fonts */
+@import url('https://fonts.googleapis.com/css2?family=Paytone+One&display=swap');
+/* font-family: 'Paytone One', sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700&family=Paytone+One&display=swap');
+/* font-family: 'Passion One', cursive; 
+font-family: 'Paytone One', sans-serif; */
+
+/* variables */
+:root {
+    --background-color: #001220;
+    --mid-section: #B34F6C;
+    --text-color: #EDF2F4;
+    --drop-shadow-title: 4px 4px 0px #6D0088, 8px 8px 0px #0057FF;
+    --drop-shadow: 3px 3px 0px #6D0088, 6px 6px 0px #0057FF;
+    --drop-shadow-small: 2px 2px 0px #6D0088, 4px 4px 0px #0057FF;
+
+
+
+    --title-font: 'Paytone One', sans-serif;
+    --sub-font: 'Passion One', cursive;
+    --sub-font-sans: 'Paytone One', sans-serif;
+}
+/* general */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: visible;
+}
+body {
+    background-color: var(--background-color);
+}
+
+.landing {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.intro-cont {
+    display: grid;
+    grid-template-columns: 120px 610px;
+    grid-template-rows: repeat(2,115px) 90px;
+    grid-template-areas: "hi hi"
+    "im name"
+    "quip quip";
+    color: var(--text-color);
+    
+}
+.hi {
+    grid-area: hi;
+    font-family: var(--sub-font);
+    font-size: 4rem;
+    margin: 0 8rem;
+    justify-self: first baseline;
+    animation: hi-float 1s forwards ease;
+   
+}
+.im {
+    grid-area: im;
+    overflow: hidden;
+}
+.im h2 {
+    opacity: 0;
+    animation: im-left 1s 2s forwards ease;
+    font-family: var(--sub-font);
+    font-size: 4rem;
+}
+
+.seperator {
+    grid-area: seperator;
+}
+.name h1 {
+    grid-area: name;
+    font-family: var(--title-font);
+    text-shadow: var(--drop-shadow-title);
+    font-size: 6rem;
+    line-height: 5rem;
+    animation: name-right 1s 2s forwards ease;
+    opacity: 0;
+    margin-top: 6px;
+    z-index: -1;
+}
+.name hr {
+    width: 5px;
+    height: 0;
+    opacity: 0;
+    background-color: #6D0088;
+    border: none;
+    animation: divider 5s 1s forwards ease;
+    z-index: 1;
+    margin-top: 1rem;
+}
+.name {
+    overflow: hidden;
+    display: flex;
+}
+.quip {
+    grid-area: quip;
+    justify-self: end;
+    overflow: hidden;
+}
+.quip h2 {
+    opacity: 0;
+    font-family: var(--sub-font);
+    font-size: 3rem;
+    animation: fall-down 1s 3s forwards ease;
+}
+.blob {
+    position: absolute;
+    top: 0;
+    left: 600px;
+    height: 100vh;
+    width: 100vw;
+    z-index: -2;
+    overflow: visible;
+}
+@keyframes hi-float {
+    from {
+        opacity: 0;
+        transform: translateY(120px);
+    } to {
+        opacity: 1;
+        transform: translateY(70px);
+    }
+}
+@keyframes im-left {
+    from {
+        position: relative;
+        left: 80px
+    } to {
+        position: relative;
+        left: 25px;
+        opacity: 1;
+    }
+}
+@keyframes name-right {
+    from {
+        position: relative;
+        left: -200px
+    } to {
+        position: relative;
+        left: 0;
+        opacity: 1;
+    }
+}
+@keyframes divider {
+    0% {
+        width: 5px;
+        height: 0;
+    } 20% {
+        height: 80px;
+        opacity: 1;
+    } 30% {
+        height: 80px;
+        opacity: 1;
+    } 40% {
+        height: 80px;
+    } 70% {
+        opacity: 1;
+        height: 0px;
+    }
+}
+@keyframes fall-down {
+    from {
+        transform: translateY(-50px);
+    } to {
+        transform: none;
+        opacity: 1;
+    }
+}
