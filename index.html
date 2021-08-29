@@ -10,43 +10,81 @@
     <title>Lajos Szabó | Portfolio</title>
 </head>
 <script type="module">
+    
+    var storeX = [835, 962,203, 246,806, 908,268, 627, 354, 702,242, 821];
+    
     function randomizer() {
-        let x = Math.floor((Math.random() * 1140 ) + 1);
+        let x = Math.floor((Math.random() * 7) + 1);
         return x;
     };
 
+    var rect = blob1.getBoundingClientRect();
+    function repos() {
+        let i = 1;
+        console.log("aids2")
+        while (i == 1) {
+            var rect = blob1.getBoundingClientRect();
+            console.log("aids")
+            if (rect.top <= 1000) {
+                var floatUp = KUTE.fromTo (
+                        '#blob4',
+                        {translate: [storeX[randomizer()], 1000] },
+                        {translate: [storeX[randomizer()], -500] },
+                        {duration: 20000}
+                    ).start();
+                    var floatUp2 = KUTE.fromTo (
+                        '#blob1',
+                        {translate: [storeX[randomizer()], 1000] },
+                        {translate: [storeX[randomizer()], -500] },
+                        {duration: 20000}
+                    ).start();
+                    break;
+            } else {
+                break;
+            }
+        }
+    };
 
-    // var blob = document.getElementById("blob1");
-    
+
     // var elementPosition = blob.getBoundingClientRect();
-    
-    // if (elementPosition.top == "-100px") {
-    //     randomizer();
-    //     document.getElementById('blob1').style.left=blob.left+"px";
-    // };
+
+    function replay() {
+        setTimeout( function myLoop() {
+            let i = 1;
+            if ( i == 1 ) {
+                repos();
+                replay();
+            }
+        }, 19500);
+    };
+    replay();
 
     var tween = KUTE.allTo(
         '#blob1',
         { path: '#blob2'},
         { duration: 9999, repeat: 4, yoyo: true}
     ).start();
-
-
-    var tween3 = KUTE.fromTo (
-        '#blob1',
-        {translateY: 700},
-        {translateY: -100},
-        {duration: 25000, repeat: 999999}
-    ).start();
-
-
     var tween2 = KUTE.allTo(
         '#blob4',
-        { path: '#blob5'},
+        { path:'#blob5'},
         {duration: 9999, repeat: 4, yoyo: true}
     ).start();
 
-    
+
+
+    var floatUp = KUTE.fromTo (
+        '#blob4',
+        {translate: [storeX[randomizer()], 800] },
+        {translate: [storeX[randomizer()], -500] },
+        {duration: 19000}
+    ).start();
+    var floatUp2 = KUTE.fromTo (
+        '#blob1',
+        {translate: [storeX[randomizer()], 800] },
+        {translate: [storeX[randomizer()], -500] },
+        {duration: 20000, repeat: 1}
+    ).start();
+        
 </script>
 <body>
     <section class="landing">
