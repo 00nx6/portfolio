@@ -7,11 +7,11 @@
     <link rel="stylesheet" href="./css/style.css">
     <script type="module" src="./javascript/libraries/kute.min.js"></script>
     <script src="./javascript/script.js"></script>
+    <link rel="svg" href="./imgs/layered-waves-haikei.svg">
     <title>Lajos Szabó | Portfolio</title>
 </head>
 <script type="module">
-    
-    var storeX = [835, 962,203, 246,806, 908,268, 627, 354, 702,242, 821];
+    var storeX = [835, 962 ,203, 246,806, 908,268, 627, 354, 702,242, 821];
     
     function randomizer() {
         let x = Math.floor((Math.random() * 7) + 1);
@@ -21,32 +21,27 @@
     var rect = blob1.getBoundingClientRect();
     function repos() {
         let i = 1;
-        console.log("aids2")
         while (i == 1) {
             var rect = blob1.getBoundingClientRect();
-            console.log("aids")
             if (rect.top <= 1000) {
                 var floatUp = KUTE.fromTo (
-                        '#blob4',
-                        {translate: [storeX[randomizer()], 1000] },
-                        {translate: [storeX[randomizer()], -500] },
-                        {duration: 20000}
-                    ).start();
-                    var floatUp2 = KUTE.fromTo (
-                        '#blob1',
-                        {translate: [storeX[randomizer()], 1000] },
-                        {translate: [storeX[randomizer()], -500] },
-                        {duration: 20000}
-                    ).start();
-                    break;
+                    '#blob3',
+                    {translate: [storeX[randomizer()], 950] },
+                    {translate: [storeX[randomizer()], -300] },
+                    {duration: 20000}
+                ).start();
+                var floatUp2 = KUTE.fromTo (
+                    '#blob1',
+                    {translate: [storeX[randomizer()], 950] },
+                    {translate: [storeX[randomizer()], -300] },
+                    {duration: 20000}
+                ).start();
+                break;
             } else {
                 break;
             }
         }
     };
-
-
-    // var elementPosition = blob.getBoundingClientRect();
 
     function replay() {
         setTimeout( function myLoop() {
@@ -55,7 +50,7 @@
                 repos();
                 replay();
             }
-        }, 19500);
+        }, 19000);
     };
     replay();
 
@@ -65,29 +60,30 @@
         { duration: 9999, repeat: 4, yoyo: true}
     ).start();
     var tween2 = KUTE.allTo(
-        '#blob4',
-        { path:'#blob5'},
+        '#blob3',
+        { path:'#blob4'},
         {duration: 9999, repeat: 4, yoyo: true}
     ).start();
 
 
 
     var floatUp = KUTE.fromTo (
-        '#blob4',
-        {translate: [storeX[randomizer()], 800] },
-        {translate: [storeX[randomizer()], -500] },
+        '#blob3',
+        {translate: [storeX[randomizer()], 950] },
+        {translate: [storeX[randomizer()], -250] },
         {duration: 19000}
     ).start();
     var floatUp2 = KUTE.fromTo (
         '#blob1',
-        {translate: [storeX[randomizer()], 800] },
-        {translate: [storeX[randomizer()], -500] },
-        {duration: 20000, repeat: 1}
+        {translate: [storeX[randomizer()], 950] },
+        {translate: [storeX[randomizer()], -250] },
+        {duration: 19000}
     ).start();
         
 </script>
 <body>
-    <section class="landing">
+    <div class="landing">
+        <section class="intro-spacer">
             <div class="intro-cont">
                 <h2 class="hi">Hi</h2>
                 <div class="im">
@@ -101,40 +97,40 @@
                     <h2>and I'm a web developer</h2>
                 </div>
             </div>
-    </section>
-<div class="blob">
-    <svg viewBox="0 0 900 600" class="test2">
-        <g>
-            <path id="blob1" class=".blob1"
-                d="M183.6 -183.9C228.1 -139.1 247.5 -69.5 248.1 0.6C248.7 70.7 230.4 141.4 185.9 172.1C141.4 202.8 70.7 193.4 17.7 175.7C-35.4 158 -70.7 132 -97.9 101.4C-125 70.7 -144 35.4 -160.8 -16.7C-177.5 -68.8 -192 -137.7 -164.8 -182.5C-137.7 -227.3 -68.8 -248.2 0.4 -248.5C69.5 -248.9 139.1 -228.7 183.6 -183.9"
-                fill="none" stroke="#BB004B" stroke-width="6">
-            </path>
-        </g>
-        <g style="visibility: hidden;">
-            <path id="blob2" 
-                d="M182.5 -161.3C232.5 -132.5 266.2 -66.2 250.8 -15.4C235.4 35.4 170.7 70.7 120.7 95.9C70.7 121 35.4 136 -14.5 150.5C-64.3 165 -128.7 179 -166.4 153.9C-204 128.7 -215 64.3 -209.6 5.4C-204.2 -53.5 -182.3 -107 -144.7 -135.8C-107 -164.7 -53.5 -168.8 6.4 -175.2C66.2 -181.6 132.5 -190.1 182.5 -161.3"
-                fill="none" stroke="#BB004B" stroke-width="6">
-            </path>
-        </g>
-        <g style="visibility: hidden;">
-            <path id="blob3"
-                d="M167.9 -185.6C194.4 -141.4 176.7 -70.7 175.4 -1.3C174.1 68.1 189.2 136.2 162.7 165.2C136.2 194.2 68.1 184.1 16.4 167.7C-35.4 151.4 -70.7 128.7 -113.7 99.7C-156.7 70.7 -207.4 35.4 -211.4 -4C-215.4 -43.4 -172.7 -86.7 -129.7 -130.9C-86.7 -175.1 -43.4 -220 13.7 -233.7C70.7 -247.4 141.4 -229.8 167.9 -185.6"
-                fill="none" stroke="#BB004B" stroke-width="6">
-            </path>
-        </g>
-        <g>
-            <path id="blob4" class=".blob4"
-                d="M167.9 -185.6C194.4 -141.4 176.7 -70.7 175.4 -1.3C174.1 68.1 189.2 136.2 162.7 165.2C136.2 194.2 68.1 184.1 16.4 167.7C-35.4 151.4 -70.7 128.7 -113.7 99.7C-156.7 70.7 -207.4 35.4 -211.4 -4C-215.4 -43.4 -172.7 -86.7 -129.7 -130.9C-86.7 -175.1 -43.4 -220 13.7 -233.7C70.7 -247.4 141.4 -229.8 167.9 -185.6"
-                fill="none" stroke="#BB004B" stroke-width="6">
-            </path>
-        </g>
-        <g style="visibility: hidden;">
-            <path id="blob5" 
-                d="M182.5 -161.3C232.5 -132.5 266.2 -66.2 250.8 -15.4C235.4 35.4 170.7 70.7 120.7 95.9C70.7 121 35.4 136 -14.5 150.5C-64.3 165 -128.7 179 -166.4 153.9C-204 128.7 -215 64.3 -209.6 5.4C-204.2 -53.5 -182.3 -107 -144.7 -135.8C-107 -164.7 -53.5 -168.8 6.4 -175.2C66.2 -181.6 132.5 -190.1 182.5 -161.3"
-                fill="none" stroke="#BB004B" stroke-width="6">
-            </path>
-        </g>
-    </svg>
-</div>
+        </section>
+        <div class="down-button">
+            <img src="./imgs/Polygon 1.svg" alt="">
+        </div>
+    </div>
+    <div class="blob">
+        <svg  viewBox="0 0 1900 900">
+            <g>
+                <path id="blob1"
+                    d="M155.6 -152.8C197.6 -113.6 224.8 -56.8 231.8 7C238.7 70.7 225.4 141.4 183.4 178.1C141.4 214.8 70.7 217.4 9.2 208.2C-52.3 199 -104.7 178 -137.5 141.3C-170.3 104.7 -183.7 52.3 -175.2 8.5C-166.7 -35.4 -136.4 -70.7 -103.5 -109.9C-70.7 -149 -35.4 -192 10.7 -202.7C56.8 -213.5 113.6 -191.9 155.6 -152.8"
+                    fill="#BB004B"></path>
+            </g>
+            <g visibility="hidden">
+                <path id="blob2"
+                    d="M148.9 -155.4C178.6 -119.3 178.3 -59.6 173.3 -4.9C168.4 49.7 158.8 99.5 129.1 136.1C99.5 172.8 49.7 196.4 1.2 195.2C-47.4 194 -94.8 168.1 -119.8 131.4C-144.8 94.8 -147.4 47.4 -159.1 -11.7C-170.7 -70.7 -191.4 -141.4 -166.4 -177.6C-141.4 -213.8 -70.7 -215.4 -5.5 -209.8C59.6 -204.3 119.3 -191.6 148.9 -155.4"
+                    fill="#BB004B">
+                </path>
+            </g>
+            <g>
+                <path id="blob3"
+                    d="M124.5 -130.5C149.5 -99.5 149.7 -49.7 144.9 -4.8C140.1 40.1 130.1 80.1 105.1 111.8C80.1 143.5 40.1 166.7 -5.3 172C-50.7 177.3 -101.4 164.7 -151.4 133C-201.4 101.4 -250.7 50.7 -259.5 -8.8C-268.4 -68.4 -236.7 -136.7 -186.7 -167.7C-136.7 -198.7 -68.4 -192.4 -9.3 -183C49.7 -173.7 99.5 -161.5 124.5 -130.5"
+                    fill="#BB004B">
+                </path>
+            </g>
+            <g visibility="hidden">
+                <path id="blob4"
+                    d="M188.6 -181.1C238.6 -138.6 269.3 -69.3 252.3 -17C235.4 35.4 170.7 70.7 120.7 101.9C70.7 133 35.4 160 -1.2 161.2C-37.7 162.4 -75.4 137.8 -117.9 106.6C-160.4 75.4 -207.7 37.7 -208.2 -0.5C-208.7 -38.7 -162.3 -77.3 -119.8 -119.8C-77.3 -162.3 -38.7 -208.7 15.3 -224C69.3 -239.3 138.6 -223.6 188.6 -181.1"
+                    fill="#BB004B">
+                </path>
+            </g>
+        </svg>
+    </div>
+    <div class="myWork">
+        
+    </div>
 </body>
 </html>
