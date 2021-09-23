@@ -26,6 +26,7 @@ font-family: 'Paytone One', sans-serif; */
     padding: 0;
     box-sizing: border-box;
     overflow: visible;
+    scroll-behavior: smooth;
 }
 body {
     background-color: var(--background-color);
@@ -43,6 +44,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 .intro-cont {
     display: grid;
@@ -122,11 +124,38 @@ body {
     z-index: -2;
     overflow: visible;
 }
-.down-button  img {
-}
+
 .myWork {
     height: 100vh;
     background-color: var(--mid-section);
+}
+.bttn-down{
+    background-image: url(/imgs/scrolldown.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex-direction: column;
+    bottom: -200px;
+}
+.bttn-down svg:first-child {
+    height:min-content;
+    width: min-content;
+}
+.bttn-down svg:last-child {
+    height: 20px;
+    width: 25px;
+    position: relative;
+    top: -78px;
+    left: -4px;
+}
+.hidden {
+    visibility: hidden;
 }
 @keyframes hi-float {
     from {
