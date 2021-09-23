@@ -27,7 +27,9 @@ function getBlobs() {
     for(let i = 0; i < blobs.length - 1; i++) {
         if(blobs[i].classList.contains('hidden') !== true) {
             blobsVis.push(blobs[i].children)
-            if(blobsVis[i][i])
+            if(blobsVis[i][i]) {
+                
+            }
         };
     };
 };
