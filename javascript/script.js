@@ -20,3 +20,4 @@ var hero = gsap.timeline({
     end: "+=800",
   }
 });
+
