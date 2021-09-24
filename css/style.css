@@ -4,18 +4,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700&family=Paytone+One&display=swap');
 /* font-family: 'Passion One', cursive; 
 font-family: 'Paytone One', sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,900;1,400&display=swap');
 
 /* variables */
 :root {
-    --background-color: #001220;
-    --mid-section: #B34F6C;
-    --text-color: #EDF2F4;
-    --drop-shadow-title: 4px 4px 0px #6D0088, 8px 8px 0px #0057FF;
-    --drop-shadow: 3px 3px 0px #6D0088, 6px 6px 0px #0057FF;
-    --drop-shadow-small: 2px 2px 0px #6D0088, 4px 4px 0px #0057FF;
-
-
-
+    --background-color: #2b1055;
+    --background-color2: #7597de;
+    --main-font: 'Poppins', sans-serif;
     --title-font: 'Paytone One', sans-serif;
     --sub-font: 'Passion One', cursive;
     --sub-font-sans: 'Paytone One', sans-serif;
@@ -29,185 +24,117 @@ font-family: 'Paytone One', sans-serif; */
     scroll-behavior: smooth;
 }
 body {
-    background-color: var(--background-color);
+    min-height: 100vh;
+    background: linear-gradient(var(--background-color), var(--background-color2));
     overflow-x: hidden;
 }
 .landing {
-    background-image: url(/imgs/layered-waves-haikei.svg);
-    background-repeat: no-repeat;
-    background-size: 100vw;
-    background-position: bottom;
-}
-.intro-spacer {
     height: 100vh;
-    width: 100vw;
+}
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2000;
+}
+.nav ul li {
+    list-style-type: none;
+}
+.nav-list {
     display: flex;
     justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    gap: 2rem;
 }
-.intro-cont {
-    display: grid;
-    grid-template-columns: 120px 610px;
-    grid-template-rows: repeat(2,115px) 90px;
-    grid-template-areas: "hi hi"
-    "im name"
-    "quip quip";
-    color: var(--text-color);
-    
+.nav-item {
+    color: white;
+    font-family: var(--main-font);
+    font-weight: 900;
+    padding: 15px;
+    text-decoration: none;
+    border-radius: 15px;
 }
-.hi {
-    grid-area: hi;
-    font-family: var(--sub-font);
-    font-size: 4rem;
-    margin: 0 8rem;
-    justify-self: first baseline;
-    animation: hi-float 1s forwards ease;
-   
+.nav-item:hover {
+    background-color: wheat;
+    color: rgb(82, 82, 82);
+    transition: background-color 1s ease;
 }
-.im {
-    grid-area: im;
-    overflow: hidden;
-}
-.im h2 {
-    opacity: 0;
-    animation: im-left 1s 2s forwards ease;
-    font-family: var(--sub-font);
-    font-size: 4rem;
+.logo {
+    color: white;
+    font-family: var(--main-font);
+    font-weight: 800;
+    text-decoration: none;
+    padding-left: 10px;
+    font-size: 1.5rem;
+    border-left: 2px solid white;
 }
 
-.seperator {
-    grid-area: seperator;
+.stars {
+    height: 100vh;
+    width: 100vw;
+    object-fit: cover;
+    z-index: 0;
 }
-.name h1 {
-    grid-area: name;
-    font-family: var(--title-font);
-    text-shadow: var(--drop-shadow-title);
-    font-size: 6rem;
-    line-height: 5rem;
-    animation: name-right 1s 2s forwards ease;
-    opacity: 0;
-    margin-top: 6px;
-    z-index: 2;
+.moon {
+    position: absolute;
+    top:0;
+    left: 40%;
+    object-fit: contain;
+    z-index: -2;
+    mix-blend-mode: screen;
+    animation: screen-blend 0s forwards;
 }
-.name hr {
-    width: 5px;
-    height: 0;
-    opacity: 0;
-    background-color: #6D0088;
-    border: none;
-    animation: divider 5s 1s forwards ease;
-    z-index: 1;
-    margin-top: 1rem;
-}
-.name {
-    overflow: hidden;
-    display: flex;
-}
-.quip {
-    grid-area: quip;
-    justify-self: end;
-    overflow: hidden;
-}
-.quip h2 {
-    opacity: 0;
-    font-family: var(--sub-font);
-    font-size: 3rem;
-    animation: fall-down 1s 3s forwards ease;
-}
-.blob {
+.mountainBhnd {
     position: absolute;
     top: 0;
     left: 0;
     height: 100vh;
     width: 100vw;
-    z-index: -2;
-    overflow: visible;
+    object-fit: cover;
+    z-index: -1;
 }
-
+.mountainFrnt {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    object-fit: cover;
+    z-index: 3;
+}
+.name {
+    position: absolute;
+    color: white;
+    white-space: nowraw;
+    font-size: 8.5rem;
+    z-index: 2;
+    font-family: var(--main-font);
+    top: 30%;
+    right: -20rem;
+}
+.landing::after {
+    content: '';
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1000;
+    height: 100px;
+    background: linear-gradient(to top, var(--background-color), transparent)
+}
 .myWork {
     height: 100vh;
-    background-color: var(--mid-section);
+    background-color: #fff;
+    background-color: var(--background-color);
 }
-.bttn-down{
-    background-image: url(/imgs/scrolldown.png);
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 100px;
-    height: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    flex-direction: column;
-    bottom: -200px;
-}
-.bttn-down svg:first-child {
-    height:min-content;
-    width: min-content;
-}
-.bttn-down svg:last-child {
-    height: 20px;
-    width: 25px;
-    position: relative;
-    top: -78px;
-    left: -4px;
-}
-.hidden {
-    visibility: hidden;
-}
-@keyframes hi-float {
+
+@keyframes screen-blend {
     from {
-        opacity: 0;
-        transform: translateY(120px);
+        mix-blend-mode: screen;
     } to {
-        opacity: 1;
-        transform: translateY(70px);
-    }
-}
-@keyframes im-left {
-    from {
-        position: relative;
-        left: 80px
-    } to {
-        position: relative;
-        left: 25px;
-        opacity: 1;
-    }
-}
-@keyframes name-right {
-    from {
-        position: relative;
-        left: -200px
-    } to {
-        position: relative;
-        left: 0;
-        opacity: 1;
-    }
-}
-@keyframes divider {
-    0% {
-        width: 5px;
-        height: 0;
-    } 20% {
-        height: 80px;
-        opacity: 1;
-    } 30% {
-        height: 80px;
-        opacity: 1;
-    } 40% {
-        height: 80px;
-    } 70% {
-        opacity: 1;
-        height: 0px;
-    }
-}
-@keyframes fall-down {
-    from {
-        transform: translateY(-50px);
-    } to {
-        transform: none;
-        opacity: 1;
+        mix-blend-mode: screen;
     }
 }
